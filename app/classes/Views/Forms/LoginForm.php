@@ -11,18 +11,20 @@ class LoginForm extends Form
         $form = [
             'attr' => [
                 'method' => 'POST',
+                'class'=>'form',
             ],
             'fields' => [
-                'username' => [
-                    'label' => 'Username',
+                'email' => [
+                    'label' => 'Email',
                     'validators' => [
                         'validate_field_not_empty',
+                        'validate_email',
                     ],
                     'type' => 'text',
                     'extra' => [
                         'attr' => [
-                            'class' => 'username',
-                            'placeholder' => 'Username...'
+                            'class' => 'input',
+                            'placeholder' => '@Email...'
                         ]
                     ]
                 ],
@@ -45,7 +47,7 @@ class LoginForm extends Form
                     'title' => 'Login',
                     'extra' => [
                         'attr' => [
-                            'class' => 'big-button',
+                            'class' => 'btn',
                         ]
                     ]
                 ]

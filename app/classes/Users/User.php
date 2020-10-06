@@ -7,27 +7,71 @@ use Core\DataHolder;
 class User extends DataHolder
 {
     protected array $properties = [
-        'username',
-        'password'
+        'name',
+        'lastname',
+        'email',
+        'password',
+        'tel',
+        'address'
     ];
 
-    public function setUsername(?string $user)
+    public function setName(?string $user)
     {
-        $this->data['username'] = $user;
+        $this->data['name'] = $user;
     }
 
-    public function getUsername()
+    public function getName()
     {
-        return $this->data['username'] ?? null;
+        return $this->data['name'] ?? null;
     }
 
-    public function setPassword(?string $password)
+    public function setLastname(?string $password)
     {
-        $this->data['password'] = $password;
+        $this->data['lastname'] = $password;
+    }
+
+    public function getLastanme()
+    {
+        return $this->data['lastname'] ?? null;
+    }
+
+    public function setEmail(?string $user)
+    {
+        $this->data['email'] = $user;
+    }
+
+    public function getEmail()
+    {
+        return $this->data['email'] ?? null;
+    }
+
+    public function setPassword(?string $user)
+    {
+        $this->data['password'] = $user;
     }
 
     public function getPassword()
     {
         return $this->data['password'] ?? null;
+    }
+
+    public function setTel(?string $user)
+    {
+        $this->data['tel'] = $user;
+    }
+
+    public function getTel()
+    {
+        return $this->data['tel'] ?? null;
+    }
+
+    public function setAddress(?string $user)
+    {
+        $this->data['address'] = $user;
+    }
+
+    public function getAddress()
+    {
+        return $this->data['address'] ?? null;
     }
 }

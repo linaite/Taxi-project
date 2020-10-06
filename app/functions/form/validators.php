@@ -11,12 +11,9 @@ use App\App;
  */
 function validate_user_unique(string $field_value, &$field)
 {
-//    $users = file_to_array(DB_FILE) ?: [];
-//    $users_db = new FileDB(DB_FILE);
-//    App::$db->load();
 
-    if (App::$db->getRowsWhere('users', ['username' => $field_value])) {
-        $field['error'] = 'Toks useris jau egzistuoja';
+    if (App::$db->getRowsWhere('users', ['email' => $field_value])) {
+        $field['error'] = 'Such user already exist';
         return false;
     }
     return true;
@@ -32,30 +29,30 @@ function validate_user_unique(string $field_value, &$field)
 function validate_login(array $form_values, array &$form): bool
 {
     if (!App::$db->getRowsWhere('users', [
-        'username' => $form_values['username'],
+//        'email' => $form_values['email'],
         'password' => $form_values['password']
     ])) {
-        $form['error'] = 'Duomenys įvesti neteisingai';
+        $form['error'] = 'Password is incorrect';
         return false;
     }
     return true;
 }
-
-/**
- * Validates unique pixel
- *
- * @param string $field_value
- * @param array $field
- * @return bool
- */
-function validate_pixels_unique($form_values, array &$field): bool
-{
-    if (App::$db->getRowsWhere('pixels', ['x' => $form_values['x'], 'y' => $form_values['y']])) {
-        $field['error'] = 'Norimas pikselis jau užimtas';
-        return false;
-    }
-    return true;
-}
+//
+///**
+// * Validates unique pixel
+// *
+// * @param string $field_value
+// * @param array $field
+// * @return bool
+// */
+//function validate_pixels_unique($form_values, array &$field): bool
+//{
+//    if (App::$db->getRowsWhere('pixels', ['x' => $form_values['x'], 'y' => $form_values['y']])) {
+//        $field['error'] = 'Norimas pikselis jau užimtas';
+//        return false;
+//    }
+//    return true;
+//}
 
 
 

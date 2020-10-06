@@ -6,6 +6,7 @@ use App\Abstracts\Controller;
 use App\App;
 use App\Users\User;
 use Core\Router;
+use Core\Views\Content;
 
 class RegisterController extends Controller
 {
@@ -37,20 +38,24 @@ class RegisterController extends Controller
      */
     function index(): ?string
     {
-        $forma = new \App\Views\Forms\RegisterForm();
+        $form = new \App\Views\Forms\RegisterForm();
 
-        if ($forma->isSubmitted()) {
-            if ($forma->validate()) {
-                $user = new User($forma->getSubmitData());
+        if ($form->isSubmitted()) {
+            if ($form->validate()) {
+                $user = new User($form->getSubmitData());
 
                 App::$db->insertRow('users', $user->_getData());
                 header('Location:'. Router::getUrl('login'));
                 exit;
             }
         }
+//        var_dump($_POST);
+
+        $content = new Content(['form' => $form->render()]);
+//        $content->render('form.tpl.php');
 
         $this->page->setTitle('Register');
-        $this->page->setContent($forma->render());
+        $this->page->setContent($form->render());
         return $this->page->render();
     }
 }

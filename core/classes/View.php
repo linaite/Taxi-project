@@ -24,7 +24,7 @@ class View
     public function render(string $template_path)
     {
         if (!file_exists($template_path)) {
-            throw (new \Exception(("Template with filename: " . "$template_path dies not exsist")));
+            throw (new \Exception(("Template with filename: " . "$template_path does not exist")));
         }
 
         $data = $this->data;

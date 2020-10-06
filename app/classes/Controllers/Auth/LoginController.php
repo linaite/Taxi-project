@@ -40,7 +40,7 @@ class LoginController extends \App\Abstracts\Controller
         if ($forma->isSubmitted()) {
             if ($forma->validate()) {
                 $form_values = $forma->getSubmitData();
-                App::$session->login($form_values['username'], $form_values['password']);
+                App::$session->login($form_values['email'], $form_values['password']);
                 header('Location:'. Router::getUrl('index'));
                 exit;
             } else {

@@ -28,8 +28,8 @@ class Session
     //patikrinam ar useris yra prisijunges is anksciau
     public function loginFromCookie(): bool
     {
-        if (isset($_SESSION['username']) && isset($_SESSION['password'])) {
-            if ($this->login($_SESSION['username'], $_SESSION['password'])) {
+        if (isset($_SESSION['email']) && isset($_SESSION['email'])) {
+            if ($this->login($_SESSION['email'], $_SESSION['password'])) {
                 return true;
             }
         }
@@ -48,11 +48,11 @@ class Session
     public function login($username, $password): bool
     {
         $users = \App\App::$db->getRowWhere('users', [
-            'username' => $username,
+            'email' => $username,
             'password' => $password
         ]);
         if ($users) {
-            $_SESSION['username'] = $username;
+            $_SESSION['email'] = $username;
             $_SESSION['password'] = $password;
             $this->user = $users;
             return true;
