@@ -26,7 +26,7 @@ class BasePage extends Page
         $content = new \Core\Views\Content();
         $nav = new Navigation();
         $footer = new Footer();
-        $this->setTitle('Unknown page');
+        $this->setTitle('Home');
         $this->addCSS('assets/css/normalize.css');
         $this->addCSS('assets/css/style-project.css');
         $this->addJS('assets/js/script.js');

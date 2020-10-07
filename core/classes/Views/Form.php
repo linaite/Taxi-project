@@ -17,7 +17,6 @@ class Form extends \Core\Abstracts\Views\Form
      *
      * @return string|null
      */
-    //statiniam properciui nereikia kurti klases
     static function getSubmitAction(): ?string
     {
         return !empty($_POST) || isset($_POST['action']) ? $_POST['action'] : null;

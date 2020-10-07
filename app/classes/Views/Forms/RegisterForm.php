@@ -104,12 +104,6 @@ class RegisterForm extends Form
                         ]
                     ]
                 ]
-            ],
-            'validators' => [
-//                'validate_fields_match' => [
-//                    'password',
-//                    'repeat_password',
-//                ],
             ]
         ];
 

@@ -37,22 +37,6 @@ function validate_login(array $form_values, array &$form): bool
     }
     return true;
 }
-//
-///**
-// * Validates unique pixel
-// *
-// * @param string $field_value
-// * @param array $field
-// * @return bool
-// */
-//function validate_pixels_unique($form_values, array &$field): bool
-//{
-//    if (App::$db->getRowsWhere('pixels', ['x' => $form_values['x'], 'y' => $form_values['y']])) {
-//        $field['error'] = 'Norimas pikselis jau užimtas';
-//        return false;
-//    }
-//    return true;
-//}
 
 
 

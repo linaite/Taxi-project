@@ -14,6 +14,6 @@ class HomeController extends \App\Abstracts\Controller
         $new_page = new BasePage();
         $new_page->setContent($content->render('index.tpl.php'));
 
-       return print $new_page->render();
+        return $new_page->render();
     }
 }

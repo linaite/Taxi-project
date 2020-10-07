@@ -6,7 +6,6 @@ use App\App;
 use Core\Router;
 use Core\Views\Content;
 
-
 class LoginController extends \App\Abstracts\Controller
 {
 
@@ -48,7 +47,7 @@ class LoginController extends \App\Abstracts\Controller
             }
         }
 
-        $content = new Content(['form'=>$form->render()]);
+        $content = new Content(['form' => $form->render()]);
 
         $this->page->setTitle('Login');
         $this->page->setContent($content->render('form.tpl.php'));

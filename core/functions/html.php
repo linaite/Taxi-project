@@ -120,5 +120,3 @@ function textarea_attr(string $field_id, array $field): string
 
 
 
-?>
-

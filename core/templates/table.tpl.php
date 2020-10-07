@@ -11,7 +11,7 @@
     <tbody>
     <?php foreach ($data['rows'] as $row) : ?>
         <tr>
-            <?php foreach ($row as $col): ?>
+            <?php foreach ($row as $key => $col): ?>
                 <td>
                     <?php print $col; ?>
                 </td>

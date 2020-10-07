@@ -60,6 +60,7 @@ class FeedbackController extends Controller
 
                     foreach ($user as $user_key => $user_value) {
                         $user_id = "#000$user_key";
+//                        $user_name = $user_value['name'];
                     }
 
                     date_default_timezone_set("Europe/Vilnius");

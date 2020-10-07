@@ -36,6 +36,6 @@ class LogoutController extends Controller
      */
     function index(): ?string
     {
-        App::$session->logout(Router::getUrl('index'));
+       App::$session->logout(Router::getUrl('index'));
     }
 }

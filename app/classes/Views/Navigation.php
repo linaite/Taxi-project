@@ -14,16 +14,16 @@ class Navigation extends View
 
         $nav = [
             'home' =>
-                ['url' => Router::getUrl('index'), 'title' => 'Home', 'class'=>'left highlite', 'id'=>'default'],
+                ['url' => Router::getUrl('index'), 'title' => 'Home', 'class'=>'left'],
         ];
 
         if (App::$session->getUser()) {
-            $nav[] = ['url' => Router::getUrl('feedback'), 'title' => 'Feedback', 'class'=>'left', 'id'=>''];
-            $nav[] = ['url' => Router::getUrl('logout'), 'title' => 'Logout', 'class'=>'right','id'=>''];
+            $nav[] = ['url' => Router::getUrl('feedback'), 'title' => 'Feedback', 'class'=>'left'];
+            $nav[] = ['url' => Router::getUrl('logout'), 'title' => 'Logout', 'class'=>'right'];
         } else {
-            $nav[] = ['url' => Router::getUrl('feedback'), 'title' => 'Feedback', 'class'=>'left', 'id'=>''];
-            $nav[] = ['url' => Router::getUrl('register'), 'title' => 'Register', 'class'=>'right', 'id'=>''];
-            $nav[] = ['url' => Router::getUrl('login'), 'title' => 'Login', 'class'=>'right', 'id'=>''];
+            $nav[] = ['url' => Router::getUrl('feedback'), 'title' => 'Feedback', 'class'=>'left'];
+            $nav[] = ['url' => Router::getUrl('register'), 'title' => 'Register', 'class'=>'right'];
+            $nav[] = ['url' => Router::getUrl('login'), 'title' => 'Login', 'class'=>'right'];
         }
 
 

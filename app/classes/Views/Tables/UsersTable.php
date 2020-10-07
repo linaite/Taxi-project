@@ -14,7 +14,7 @@ class UsersTable extends Table
 
         $table = [
             'headers' => [
-                'UserID',
+                'User Id',
                 'Date',
                 'Comment',
             ],
