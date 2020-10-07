@@ -43,19 +43,18 @@ class RegisterController extends Controller
         if ($form->isSubmitted()) {
             if ($form->validate()) {
                 $user = new User($form->getSubmitData());
+                $submitted_data = $form->getSubmitData();
 
-                App::$db->insertRow('users', $user->_getData());
-                header('Location:'. Router::getUrl('login'));
+                $up_user = new User($form->getSubmitData());
+                App::$db->insertRow('users', $up_user->_getData());
+                header('Location:' . Router::getUrl('login'));
                 exit;
             }
         }
-//        var_dump($_POST);
-
-        $content = new Content(['form' => $form->render()]);
-//        $content->render('form.tpl.php');
+        $content = new Content(['form'=>$form->render()]);
 
         $this->page->setTitle('Register');
-        $this->page->setContent($form->render());
+        $this->page->setContent($content->render('form.tpl.php'));
         return $this->page->render();
     }
 }

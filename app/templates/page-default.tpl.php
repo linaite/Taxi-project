@@ -18,9 +18,7 @@
 <header>
     <?php print $data['header']; ?>
 </header>
-<main>
-    <?php print $data['content']; ?>
-</main>
+<?php print $data['content']; ?>
 <footer>
     <?php print $data['footer']; ?>
 </footer>

@@ -10,14 +10,15 @@ class UsersTable extends Table
     public function __construct()
     {
 
-        $users = App::$db->getRowsWhere('users', []);
+        $data = App::$db->getRowsWhere('data', []);
 
         $table = [
             'headers' => [
-                'Username',
-                'Password',
+                'UserID',
+                'Date',
+                'Comment',
             ],
-            'rows' => $users,
+            'rows' => $data,
         ];
 
         parent::__construct($table);

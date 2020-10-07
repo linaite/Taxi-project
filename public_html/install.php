@@ -4,7 +4,7 @@ require('../bootloader.php');
 use App\App;
 
 App::$db->createTable('users');
-App::$db->createTable('pixels');
+App::$db->createTable('data');
 
 ?>
 

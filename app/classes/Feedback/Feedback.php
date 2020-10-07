@@ -7,49 +7,38 @@ use Core\DataHolder;
 class Feedback extends DataHolder
 {
     protected array $properties = [
-        'x',
-        'y',
-        'color',
-        'username'
+        'userid',
+        'comment',
+        'date',
     ];
 
-    public function setX(?int $x)
+    public function setName(?string $name)
     {
-        $this->data['x'] = $x;
+        $this->data['name'] = $name;
     }
 
-    public function getX()
+    public function getName()
     {
-        return $this->data['x'] ?? null;
+        return $this->data['name'] ?? null;
     }
 
-    public function setY(?int $y)
+    public function setComment(?string $comment)
     {
-        $this->data['y'] = $y;
+        $this->data['comment'] = $comment;
     }
 
-    public function getY()
+    public function getComment()
     {
-        return $this->data['y'] ?? null;
+        return $this->data['comment'] ?? null;
     }
 
-    public function setColor(?string $color)
+    public function setDate(?string $date)
     {
-        $this->data['color'] = $color;
+        $this->data['date'] = $date;
     }
 
-    public function getColor()
+    public function getDate()
     {
-        return $this->data['color'] ?? null;
-    }
-
-    public function setUsername(?string $username)
-    {
-        $this->data['username'] = $username;
-    }
-
-    public function getUsername()
-    {
-        return $this->data['username'] ?? null;
+        return $this->data['date'] ?? null;
     }
 }

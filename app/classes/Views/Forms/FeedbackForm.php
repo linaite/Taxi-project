@@ -12,57 +12,26 @@ class FeedbackForm extends Form
         $form = [
             'attr' => [
                 'method' => 'POST',
+                'class' => 'form'
             ],
             'fields' => [
-                'x' => [
+                'Comment' => [
+                    'label' => 'Your comment',
                     'validators' => [
                         'validate_field_not_empty',
-                        'validate_field_range' => [
-                            'min' => 0,
-                            'max' => 490,
-                        ],
                     ],
-                    'type' => 'number',
+                    'type' => 'textarea',
                     'extra' => [
                         'attr' => [
-                            'class' => 'text',
-                            'placeholder' => 'X kordinate'
+                            'class' => 'textarea',
+                            'placeholder' => 'Please, comment here..'
                         ]
                     ]
-                ],
-                'y' => [
-                    'validators' => [
-                        'validate_field_not_empty',
-                        'validate_field_range' => [
-                            'min' => 0,
-                            'max' => 490,
-                        ],
-                    ],
-                    'type' => 'number',
-                    'extra' => [
-                        'attr' => [
-                            'class' => 'text',
-                            'placeholder' => 'Y kordinate'
-                        ]
-                    ]
-                ],
-                'color' => [
-                    'type' => 'select',
-                    'value' => 'red',
-                    'options' => [
-                        'red' => 'Red',
-                        'black' => 'Black',
-                        'green' => 'Green',
-                        'blue' => 'Blue',
-                    ],
-                    'validators' => [
-                        'validate_field_select',
-                    ],
                 ],
             ],
             'buttons' => [
                 'save' => [
-                    'title' => 'Įdėti pikselį',
+                    'title' => 'Sumbit',
                     'extra' => [
                         'attr' => [
                             'class' => 'btn',
@@ -70,9 +39,6 @@ class FeedbackForm extends Form
                     ]
                 ],
             ],
-            'validators' => [
-                'validate_pixels_unique',
-            ]
         ];
 
         parent::__construct($form);

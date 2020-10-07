@@ -13,6 +13,11 @@
                     </option>
                 <?php endforeach; ?>
             </select>
+        <?php elseif ($field['type'] === 'textarea') : ?>
+            <textarea <?php print textarea_attr($field_id, $field); ?>></textarea>
+            <?php if (isset($field['error'])): ?>
+                <span><?php print $field['error']; ?></span>
+            <?php endif; ?>
         <?php else: ?>
             <input <?php print input_attr($field_id, $field); ?> />
             <?php if (isset($field['error'])): ?>
@@ -27,8 +32,6 @@
     <?php if (isset($data['error'])) : ?>
         <span class="error"><?php print $data['error']; ?></span>
     <?php endif; ?>
-
-
     <!-- Button generation start-->
     <?php foreach ($data['buttons'] ?? [] as $button_id => $button): ?>
         <button <?php print button_attr($button_id, $button); ?> >

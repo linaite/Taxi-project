@@ -10,31 +10,39 @@ function validate_field_not_empty($field_value, &$field)
 {
     if ($field_value === '') {
         $field['error'] = 'Please fill in all the required fields.';
-    } else {
-        return true;
+        return false;
     }
+    return true;
 }
 
+/**
+ * Validates if field is an e-mail
+ *
+ * @param string $field_value
+ * @param array $field
+ * @return bool|null
+ */
 function validate_email($field_value, &$field)
 {
     if (!filter_var($field_value, FILTER_VALIDATE_EMAIL)) {
         $field['error'] = "$field_value is not a valid email address";
-    } else {
-        return true;
+        return false;
     }
+    return true;
 }
 
 function validate_field_length_numbers($field_value, &$field)
 {
-    if (strlen($field_value) > 400) {
+    if (strlen($field_value) > 40) {
         $field['error'] = 'Input length could not be more than 400 symbols';
+        return false;
         // TRUE if $field_value contains a decimal digit
         //Returns a string starting from the character found, or FALSE if it is not found.
     } else if (strpbrk($field_value, '1234567890') !== FALSE) {
         $field['error'] = 'Input could not contain number';
-    } else {
-        return true;
+        return false;
     }
+    return true;
 }
 
 

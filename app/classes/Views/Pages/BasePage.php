@@ -29,6 +29,7 @@ class BasePage extends Page
         $this->setTitle('Unknown page');
         $this->addCSS('assets/css/normalize.css');
         $this->addCSS('assets/css/style-project.css');
+        $this->addJS('assets/js/script.js');
         $this->addFont("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap");
         $this->setHeader($nav->render());
         $this->setFooter($footer->render('footer.tpl.php'));

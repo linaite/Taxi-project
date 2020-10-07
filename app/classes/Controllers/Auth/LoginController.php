@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Controllers\Auth;
+
 use App\App;
 use Core\Router;
+use Core\Views\Content;
 
 
 class LoginController extends \App\Abstracts\Controller
@@ -35,22 +37,21 @@ class LoginController extends \App\Abstracts\Controller
      */
     function index(): ?string
     {
-        $forma = new \App\Views\Forms\LoginForm();
+        $form = new \App\Views\Forms\LoginForm();
 
-        if ($forma->isSubmitted()) {
-            if ($forma->validate()) {
-                $form_values = $forma->getSubmitData();
+        if ($form->isSubmitted()) {
+            if ($form->validate()) {
+                $form_values = $form->getSubmitData();
                 App::$session->login($form_values['email'], $form_values['password']);
-                header('Location:'. Router::getUrl('index'));
+                header('Location:' . Router::getUrl('index'));
                 exit;
-            } else {
-                $message = 'Prisijungti nepavyko!';
             }
         }
-        $content = new \Core\Views\Content(['form'=>$forma->render()]);
+
+        $content = new Content(['form'=>$form->render()]);
 
         $this->page->setTitle('Login');
-        $this->page->setContent($forma->render());
+        $this->page->setContent($content->render('form.tpl.php'));
         return $this->page->render();
     }
 }

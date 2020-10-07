@@ -2,6 +2,12 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+body {
+    margin: 0;
+    position: relative;
+    min-height: 100vh;
+}
+
 /*HEADER*/
 
 header {
@@ -16,22 +22,17 @@ header {
 .navbar {
     width: 800px;
     margin: 0 auto;
-    /*border: 1px solid black;*/
     overflow: hidden;
     padding: 0;
     position: relative;
-
 }
 
 .navbar a {
     font-size: 1.2em;
+    margin: 0 10px;
     color: black;
     text-decoration: none;
     font-weight: 400;
-}
-
-.navbar a {
-    margin: 0 10px;
 }
 
 .navbar .left {
@@ -40,6 +41,10 @@ header {
 
 .navbar .right {
     float: right;
+}
+
+.navbar a:active, .navbar a:focus, .navbar a:hover {
+    color: red;
 }
 
 /*IMG BLOCK*/
@@ -52,7 +57,7 @@ header {
 }
 
 /*CONTAINER*/
-.container_1 {
+.container {
     max-width: 800px;
     margin: 20px auto;
     height: 400px;
@@ -110,25 +115,35 @@ iframe {
     height: 300px;
 }
 
-/*LOGIN, REGISTER*/
-
-.reg_login_main {
-    margin: 0;
-    font-family: 'Roboto', sans-serif;
-    min-height: 100vh;
+/*BACKGROUND FORM, FEEDBACK*/
+.bg_main {
     background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
     background-attachment: fixed;
     background-repeat: no-repeat;
 }
 
-.form {
-    width: 450px;
+main, .bg_main {
+    min-height: 100vh;
+    margin: 0;
 }
 
-.form,
-.add_form {
+.links{
+    display: flex;
+    justify-content: center;
+}
+
+.links > a {
+    text-decoration: none;
+    font-size: 1.2em;
+    color: black;
+    text-align: center;
+}
+
+/*LOGIN, REGISTER*/
+.form {
+    width: 450px;
     border-radius: 5px;
-    margin: 40px auto;
+    margin: 0 auto;
     box-shadow: 0 9px 50px hsla(20, 67%, 75%, 0.31);
     padding: 5%;
     box-sizing: border-box;
@@ -137,15 +152,11 @@ iframe {
     font-weight: 300;
 }
 
-.add_form {
-    width: 100%;
-}
-
-
-input {
+input,
+textarea {
     width: 100%;
     margin: 10px 0 5px 0;
-    padding: 15px;
+    padding: 10px;
     font-size: 14px;
     color: #5E6472;
     outline: none;
@@ -154,7 +165,6 @@ input {
     border-radius: 0px 5px 5px 0px;
     transition: 0.2s linear;
 }
-
 
 .form > label > span:first-child,
 .add_form > label > span:first-child {
@@ -175,12 +185,11 @@ input {
 .btn {
     background: #B8F2E6;
     padding: 10px;
-    margin: 0 auto;
+    margin: 20px auto;
     display: block;
     border: none;
     border-radius: 5px;
     color: #5E6472;
-    margin-top: 20px;
 }
 
 .btn:hover {
@@ -188,12 +197,52 @@ input {
     box-shadow: none;
 }
 
-.btns_block {
-    margin-top: 10px;
-    display: flex;
-    justify-content: space-around;
+.reg_block {
+    padding-bottom: 80px;
 }
 
+/*TABLE*/
+.table_block {
+    padding: 30px 0;
+}
+
+table {
+    width: 800px;
+    margin: 20px auto;
+    font-weight: 300;
+    box-shadow: 0px 0px 3px 0px #000000;
+}
+
+table, th, td {
+    border: 1px solid black;
+    padding: 10px;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+td, th {
+    width: 33.33%;
+    word-wrap: break-word;
+}
+
+th {
+    background-color: #FFE6FA;
+}
+
+/*REG LINK*/
+
+/*FOOTER*/
+footer {
+    height: 70px;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
 
 @media only screen and (max-width: 400px) {
     .navbar, main, footer {
@@ -204,7 +253,7 @@ input {
         height: 150px;
     }
 
-    .container_1 {
+    .container {
         height: auto;
         max-width: 400px;
         flex-direction: column;
@@ -227,44 +276,11 @@ input {
         margin-top: 0;
     }
 
+    .form {
+        max-width: 400px;
+    }
 
+    table {
+        width: 400px;
+    }
 }
-
-body {
-    margin: 0;
-    font-family: 'Roboto', sans-serif;
-    position: relative;
-    min-height: 100vh;
-}
-
-/*FOOTER*/
-
-footer {
-    height: 70px;
-    background-color: black;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/*TABLE*/
-
-table {
-    margin: 20px auto;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
-}
-
-table, th, td {
-    border: 1px solid black;
-    padding: 10px;
-    border-collapse: collapse;
-    background-color: white;
-}
-
-
-th {
-    background-color: lightpink;
-}
-

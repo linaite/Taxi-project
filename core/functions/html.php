@@ -97,5 +97,28 @@ function option_attr(string $option_id, array $field): string
     return html_attr($attributes);
 }
 
+/**
+ * Generates textarea tag attributes
+ *
+ * @param string $field_id
+ * @param array $field
+ * @return string
+ */
+
+function textarea_attr(string $field_id, array $field): string
+{
+    $attributes = [
+        'name' => $field_id,
+        'type' => $field['type'],
+        'id' => $field_id,
+    ];
+
+    $attributes += $button['extra']['attr'] ?? [];
+    return html_attr($attributes);
+}
+
+
+
+
 ?>
 
