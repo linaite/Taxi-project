@@ -80,7 +80,7 @@ header {
     background-color: rgba(223, 181, 140, 0.8);
 }
 
-.img:hover .yellow {
+.img_block:hover .yellow {
     background: none;
     transition: background 1s;
 }

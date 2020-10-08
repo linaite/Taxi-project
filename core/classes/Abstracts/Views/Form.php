@@ -3,7 +3,6 @@
 namespace Core\Abstracts\Views;
 
 use Core\View;
-//kad is karto paruost masyva printinimui, butent del to extendinom Views sitoj vietoj
 /**
  * Class Form
  *

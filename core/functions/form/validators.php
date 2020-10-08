@@ -9,7 +9,7 @@
 function validate_field_not_empty($field_value, &$field)
 {
     if ($field_value === '') {
-        $field['error'] = 'This field is required.';
+        $field['error'] = 'This field is required';
         return false;
     }
 
@@ -43,22 +43,29 @@ function validate_email($field_value, &$field)
 function validate_field_length_numbers($field_value, &$field)
 {
     if (strlen($field_value) > 40) {
-        $field['error'] = 'Input length could not be more than 400 symbols';
+        $field['error'] = 'Input length could not be more than 40 symbols';
         return false;
         // TRUE if $field_value contains a decimal digit
         //Returns a string starting from the character found, or FALSE if it is not found.
     } else if (strpbrk($field_value, '1234567890') !== FALSE) {
-        $field['error'] = 'Input could not contain number';
+        $field['error'] = 'This field could not contain numbers';
         return false;
     }
 
     return true;
 }
 
+/**
+ * Validates field has less than 500 symbols
+ *
+ * @param $field_value
+ * @param $field
+ * @return bool
+ */
 function validate_field_length($field_value, &$field)
 {
     if (strlen($field_value) > 500) {
-        $field['error'] = 'Input length could not be more than 400 symbols';
+        $field['error'] = 'Input length could not be more than 500 symbols';
         return false;
     }
 

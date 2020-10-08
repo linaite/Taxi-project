@@ -16,7 +16,7 @@ class FeedbackForm extends Form
             ],
             'fields' => [
                 'Comment' => [
-                    'label' => 'Your comment',
+                    'label' => 'Tell us what you think: suggestions, complaints and compliments!',
                     'validators' => [
                         'validate_field_not_empty',
                         'validate_field_length'
@@ -25,7 +25,7 @@ class FeedbackForm extends Form
                     'extra' => [
                         'attr' => [
                             'class' => 'textarea',
-                            'placeholder' => 'Please, comment here..'
+                            'placeholder' => 'Please, leave your comment here...'
                         ]
                     ]
                 ],

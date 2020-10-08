@@ -4,9 +4,6 @@ namespace Core;
 
 class View
 {
-    //Si klase atsakinga uz atvaizdavima overall, paima duomenis ir sujungia juos su template.
-    // Ja kurem kad galetume skirtingus duomenis paduot ir skirtingus dalykus atvaizduot.
-    //View klase uzmapina duomenu masyva ant template ir su render metodu uzmetam tai ka padavem ant template.
     protected $data;
 
     public function __construct($data = [])

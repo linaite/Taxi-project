@@ -36,6 +36,12 @@ class LoginController extends \App\Abstracts\Controller
      */
     function index(): ?string
     {
+
+        if (App::$session->getUser()) {
+            header('Location:'. Router::getUrl('index'));
+            exit;
+        }
+
         $form = new \App\Views\Forms\LoginForm();
 
         if ($form->isSubmitted()) {

@@ -72,7 +72,7 @@ function select_attr(string $field_id, array $field): string
         'id' => $field_id,
     ];
 
-    $attributes += $button['extra']['attr'] ?? [];
+    $attributes += $field['extra']['attr'] ?? [];
     return html_attr($attributes);
 }
 
@@ -113,7 +113,7 @@ function textarea_attr(string $field_id, array $field): string
         'id' => $field_id,
     ];
 
-    $attributes += $button['extra']['attr'] ?? [];
+    $attributes += $field['extra']['attr'] ?? [];
     return html_attr($attributes);
 }
 

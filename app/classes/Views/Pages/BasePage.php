@@ -23,7 +23,6 @@ class BasePage extends Page
      */
     public function __construct()
     {
-        $content = new \Core\Views\Content();
         $nav = new Navigation();
         $footer = new Footer();
         $this->setTitle('Home');
