@@ -1,6 +1,6 @@
 <?php
 /**
- * validating if input value is not empty
+ * Validating if input value is not empty
  *
  * @param $field_value
  * @param array $field
@@ -17,7 +17,7 @@ function validate_field_not_empty($field_value, &$field)
 }
 
 /**
- * Validates if field is an e-mail
+ * Validates if field meets email standard
  *
  * @param string $field_value
  * @param array $field
@@ -33,6 +33,13 @@ function validate_email($field_value, &$field)
     return true;
 }
 
+/**
+ *Validates field is appropriate length and doesn't have symbols
+ *
+ * @param $field_value
+ * @param $field
+ * @return bool
+ */
 function validate_field_length_numbers($field_value, &$field)
 {
     if (strlen($field_value) > 40) {
@@ -47,6 +54,18 @@ function validate_field_length_numbers($field_value, &$field)
 
     return true;
 }
+
+function validate_field_length($field_value, &$field)
+{
+    if (strlen($field_value) > 500) {
+        $field['error'] = 'Input length could not be more than 400 symbols';
+        return false;
+    }
+
+    return true;
+}
+
+
 
 
 

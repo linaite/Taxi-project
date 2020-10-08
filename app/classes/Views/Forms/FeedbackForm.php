@@ -19,6 +19,7 @@ class FeedbackForm extends Form
                     'label' => 'Your comment',
                     'validators' => [
                         'validate_field_not_empty',
+                        'validate_field_length'
                     ],
                     'type' => 'textarea',
                     'extra' => [

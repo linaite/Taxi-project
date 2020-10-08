@@ -80,7 +80,7 @@ header {
     background-color: rgba(223, 181, 140, 0.8);
 }
 
-.img:hover .yellow{
+.img:hover .yellow {
     background: none;
     transition: background 1s;
 }
@@ -97,7 +97,7 @@ header {
     align-items: center;
 }
 
-.img_content>h4 {
+.img_content > h4 {
     color: white;
     font-size: 30px;
     padding: 0 30px 20px 30px;
@@ -260,6 +260,10 @@ textarea {
     transition: 0.2s linear;
 }
 
+textarea {
+    height: 80px;
+}
+
 .form > label > span:first-child {
     font-size: 16px;
     color: #5E6472;
@@ -373,16 +377,26 @@ footer {
         width: 320px;
     }
 
-    .table_block {
+    .table_block,
+    .feedback_block {
         width: 340px;
         margin: 0 auto;
     }
 
-    table {
+    .feedback_block {
+        padding-bottom: 30px;
+    }
+
+    table,
+    .feedback_block > .feedback_form {
         width: 100%;
     }
 
-    .image, iframe {
+    textarea {
+        height: 50px;
+    }
+
+    .img_block, iframe {
         height: 150px;
     }
 
@@ -400,23 +414,23 @@ footer {
         font-size: 12px;
         margin-top: 0;
     }
+    footer > span {
+        font-size: 1em;
+    }
 }
 
 @media only screen and (max-width: 320px) {
     .navbar a,
     footer > span {
-        font-size: 15px;
+        font-size: 0.8em;
     }
 
     .navbar a {
         margin: 0 5px;
-        color: #3e403f;
-        text-decoration: none;
-        font-weight: 400;
         padding: 2px;
     }
 
-    .img_content>h4 {
+    .img_content > h4 {
         font-size: 25px;
     }
 
@@ -428,8 +442,13 @@ footer {
         width: 280px;
     }
 
-    .table_block {
+    .table_block,
+    .feedback_block {
         width: 300px;
         margin: 0 auto;
+    }
+
+    .links span {
+        font-size: 1em;
     }
 }

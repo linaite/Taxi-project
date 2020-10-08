@@ -10,6 +10,6 @@
                 </a>
             </span>
         </div>
-        <div><?php print isset($data['form']) ? $data['form'] : null; ?></div>
+        <div class="feedback_block"><?php print isset($data['form']) ? $data['form'] : null; ?></div>
     </div>
 </main>
