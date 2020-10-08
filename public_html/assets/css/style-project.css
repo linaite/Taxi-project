@@ -4,9 +4,16 @@
 
 body {
     margin: 0;
+    color: #3e403f;
 }
 
-/*HEADER*/
+/*
+***
+* SECTION FOR HEADER STYLE
+***
+*This section includes header and navbar style
+***
+*/
 header {
     height: 70px;
     background-color: white;
@@ -25,10 +32,20 @@ header {
 
 .navbar a {
     font-size: 1.2em;
-    margin: 0 10px;
+    margin: 0 30px;
     color: #3e403f;
     text-decoration: none;
     font-weight: 400;
+    padding: 5px;
+}
+
+.navbar a:first-child {
+    margin: 0;
+}
+
+.navbar a:last-child,
+.navbar a:nth-child(3) {
+    margin-right: 0;
 }
 
 .navbar .left {
@@ -39,16 +56,19 @@ header {
     float: right;
 }
 
-.navbar a:hover {
-    color: #FDBC32;
+.active {
+    border: 1px solid #3e403f;
+    border-radius: 5px;
 }
 
-/*IMG BLOCK*/
-.img_container {
-    position: relative;
-}
-
-.image {
+/*
+***
+* SECTION FOR IMAGE STYLE
+***
+*This section includes image block style with overlay
+***
+*/
+.img_block {
     height: 300px;
     background-image: url("../images/taxi.jpg");
     background-position: center;
@@ -56,40 +76,57 @@ header {
     background-size: cover;
 }
 
-.image_overlay {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+.yellow {
+    background-color: rgba(223, 181, 140, 0.8);
+}
+
+.img:hover .yellow{
+    background: none;
+    transition: background 1s;
+}
+
+.img_content {
     height: 100%;
-    width: 100%;
-    opacity: 0;
-    transition: .5s ease;
-    background-color: black;
+    box-sizing: border-box;
+    font-weight: 500;
+    transition: background 1s;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.img_container:hover .image_overlay {
-    opacity: 0.4;
-}
-
-.text {
+.img_content>h4 {
     color: white;
-    font-size: 2.2em;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+    font-size: 30px;
+    padding: 0 30px 20px 30px;
+    border-bottom: 3px solid white;
+    box-sizing: border-box;
+    margin-bottom: 0;
 }
 
-/*CONTAINER*/
+.img_content > span {
+    text-transform: uppercase;
+    color: white;
+    font-size: 14px;
+    /*display: block;*/
+    margin-top: 20px;
+}
+
+/*
+***
+* SECTION FOR CONTAINER STYLE
+***
+*This section includes container's and cards style
+***
+*/
 .container {
     max-width: 800px;
     margin: 20px auto;
     height: 400px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -124,13 +161,10 @@ header {
 .card_content {
     padding: 5px;
     box-sizing: border-box;
-    flex-grow: 1;
-    color: #3e403f;
 }
 
 .card_title {
     margin: 10px 0;
-    /*text-align: center;*/
 }
 
 .card_text {
@@ -142,13 +176,22 @@ header {
     margin-top: 10px;
 }
 
-/*MAP*/
+/*
+***
+* SECTION FOR MAP STYLE
+***
+*This section includes map's style
+***
+*/
 iframe {
     width: 100%;
     height: 300px;
 }
 
-/*MAIN SEC-BG*/
+/*-------*------*-------*/
+
+
+/*SECTION FOR REGISTER, LOGIN, FEEDBACK MAIN TAG'S STYLE*/
 .bg_main {
     background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
     background-attachment: fixed;
@@ -157,25 +200,27 @@ iframe {
 
 main, .bg_main {
     min-height: 85vh;
-    margin: 0;
 }
 
-/*LINK TO REGISTER*/
-
+/*LINK TO REGISTER in FEEDBACK PAGE*/
 .links {
     text-align: center;
 }
 
-.links > span {
+.links span {
     font-size: 1.2em;
 }
 
 .links > a {
-    color: black;
+    color: #3e403f;
     text-align: center;
 }
 
-/*LOGIN, REGISTER*/
+.links > span > a:hover {
+    color: indianred;
+}
+
+/*LOGIN, REGISTER, FEEDBACK FORMS*/
 .form_block {
     padding: 50px 0;
     box-sizing: border-box;
@@ -183,6 +228,7 @@ main, .bg_main {
 
 .form {
     width: 450px;
+    margin: 0 auto;
 }
 
 .feedback_form {
@@ -192,7 +238,6 @@ main, .bg_main {
 .form,
 .feedback_form {
     border-radius: 5px;
-    margin: 0 auto;
     box-shadow: 0 9px 50px hsla(20, 67%, 75%, 0.31);
     padding: 5%;
     box-sizing: border-box;
@@ -207,11 +252,11 @@ textarea {
     margin: 10px 0 5px 0;
     padding: 10px;
     font-size: 14px;
-    color: #5E6472;
+    color: #3e403f;
     outline: none;
     border: none;
     box-sizing: border-box;
-    border-radius: 0px 5px 5px 0px;
+    border-radius: 5px;
     transition: 0.2s linear;
 }
 
@@ -236,7 +281,8 @@ textarea {
     display: block;
     border: none;
     border-radius: 5px;
-    color: #5E6472;
+    color: #3e403f;
+    outline: none;
 }
 
 .btn:hover {
@@ -256,18 +302,19 @@ textarea {
 }
 
 table {
-    width: 800px;
-    margin: 20px auto;
+    width: 100%;
+    margin: 0 auto;
     font-weight: 300;
     box-shadow: 0px 0px 3px 0px #000000;
+    padding: 0 10px;
 }
 
 table, th, td {
-    border: 1px solid black;
+    border: 1px solid lightgray;
     padding: 10px;
     box-sizing: border-box;
-    border-collapse: collapse;
     background-color: white;
+    border-collapse: collapse;
 }
 
 td, th {
@@ -287,15 +334,31 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    /*position: absolute;*/
-    /*bottom: 0;*/
-    /*width: 100%;*/
 }
 
 @media only screen and (max-width: 400px) {
     .navbar {
         display: flex;
+        align-items: center;
         justify-content: space-around;
+    }
+
+    .navbar a {
+        font-size: 1.2em;
+        margin: 0 10px;
+        color: #3e403f;
+        text-decoration: none;
+        font-weight: 400;
+        padding: 3px;
+    }
+
+    .navbar a:first-child {
+        margin: 10px;
+    }
+
+    .navbar a:last-child,
+    .navbar a:nth-child(3) {
+        margin-right: 10px;
     }
 
     .container {
@@ -339,11 +402,26 @@ footer {
     }
 }
 
-
 @media only screen and (max-width: 320px) {
     .navbar a,
     footer > span {
         font-size: 15px;
+    }
+
+    .navbar a {
+        margin: 0 5px;
+        color: #3e403f;
+        text-decoration: none;
+        font-weight: 400;
+        padding: 2px;
+    }
+
+    .img_content>h4 {
+        font-size: 25px;
+    }
+
+    .img_content > span {
+        font-size: 14px;
     }
 
     .form {
@@ -354,5 +432,4 @@ footer {
         width: 300px;
         margin: 0 auto;
     }
-
 }

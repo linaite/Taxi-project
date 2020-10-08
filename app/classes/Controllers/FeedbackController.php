@@ -38,25 +38,19 @@ class FeedbackController extends Controller
      */
     function index(): ?string
     {
+        $table = new UsersTable();
+
         if (!App::$session->getUser()) {
-            $table = new UsersTable();
+            $txt = 'Want to leave a comment?';
             $msg = 'Click here and register!';
             $link = Router::getUrl('register');
 
-
-            $content = new Content(['link' => $link, 'msg' => $msg, 'table' => $table->render('table.tpl.php')]);
-            $this->page->setTitle('Feedback');
-            $this->page->setContent($content->render('feedback.tpl.php'));
-
-            return $this->page->render();
+            $content = new Content(['txt' => $txt, 'link' => $link, 'msg' => $msg, 'table' => $table->render('table.tpl.php')]);
         } else {
-            $table = new UsersTable();
             $form = new FeedbackForm();
-
             if ($form->isSubmitted()) {
                 if ($form->validate()) {
                     $submitted_comment = $form->getSubmitData()['Comment'];
-
                     $user = App::$db->getRowsWhere('users', ['email' => App::$session->getUser()['email']]);
 
                     foreach ($user as $user_key => $user_value) {
@@ -67,12 +61,12 @@ class FeedbackController extends Controller
                     App::$db->insertRow('data', ['userid' => $user_id, 'date' => date('Y-m-d H:i:s'), 'comment' => $submitted_comment]);
                 }
             }
-
             $content = new Content(['form' => $form->render(), 'table' => $table->render('table.tpl.php')]);
-            $this->page->setTitle('Feedback');
-            $this->page->setContent($content->render('feedback_loggedin.tpl.php'));
-
-            return $this->page->render();
         }
+
+        $this->page->setTitle('Feedback');
+        $this->page->setContent($content->render('feedback.tpl.php'));
+
+        return $this->page->render();
     }
 }

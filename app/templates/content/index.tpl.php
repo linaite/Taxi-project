@@ -1,11 +1,10 @@
 <main>
-    <section class="img_container">
-        <div class="image">
-            <div class="image_overlay">
-                <div class="text">Welcome!</div>
-            </div>
+    <div class="img_block">
+        <div class="img_content yellow">
+            <h4>WELCOME!</h4>
+            <span>Best taxi ever!</span>
         </div>
-    </section>
+    </div>
     <section class="container">
         <div class="card">
             <div class="card_pic pic_1"></div>
