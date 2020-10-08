@@ -9,7 +9,7 @@
 function validate_field_not_empty($field_value, &$field)
 {
     if ($field_value === '') {
-        $field['error'] = 'Please fill in all the required fields.';
+        $field['error'] = 'This field is required.';
         return false;
     }
 

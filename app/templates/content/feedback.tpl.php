@@ -3,6 +3,8 @@
         <?php print $data['table']; ?>
     </div>
     <div class="links">
-        <a href="<?php print $data['link']; ?>"><?php print $data['msg']; ?></a>
+            <span>Want to leave a comment?
+                <a href="<?php print $data['link']; ?>"><?php print $data['msg']; ?></a>
+            </span>
     </div>
 </main>

@@ -19,6 +19,7 @@ class LoginForm extends Form
                     'validators' => [
                         'validate_field_not_empty',
                         'validate_email',
+                        'validate_user_exist',
                     ],
                     'type' => 'text',
                     'extra' => [

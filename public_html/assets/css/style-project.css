@@ -7,7 +7,6 @@ body {
 }
 
 /*HEADER*/
-
 header {
     height: 70px;
     background-color: white;
@@ -27,7 +26,7 @@ header {
 .navbar a {
     font-size: 1.2em;
     margin: 0 10px;
-    color: black;
+    color: #3e403f;
     text-decoration: none;
     font-weight: 400;
 }
@@ -57,7 +56,7 @@ header {
     background-size: cover;
 }
 
-.overlay {
+.image_overlay {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -68,10 +67,9 @@ header {
     opacity: 0;
     transition: .5s ease;
     background-color: black;
-
 }
 
-.img_container:hover .overlay {
+.img_container:hover .image_overlay {
     opacity: 0.4;
 }
 
@@ -93,19 +91,20 @@ header {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    box-shadow: 0px 0px 3px 0px #000000;
 }
 
 .card {
     width: 25%;
-    height: 260px;
+    height: 100%;
     border: 1px solid lightgray;
+    overflow: hidden;
 }
 
 .card_pic {
-    min-height: 40%;
+    height: 40%;
     width: 100%;
     background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
     object-fit: cover;
 }
@@ -126,11 +125,12 @@ header {
     padding: 5px;
     box-sizing: border-box;
     flex-grow: 1;
+    color: #3e403f;
 }
 
 .card_title {
     margin: 10px 0;
-    text-align: center;
+    /*text-align: center;*/
 }
 
 .card_text {
@@ -138,14 +138,17 @@ header {
     margin: 0;
 }
 
-/*MAP*/
+.card_content > .card_text:last-child {
+    margin-top: 10px;
+}
 
+/*MAP*/
 iframe {
     width: 100%;
     height: 300px;
 }
 
-/*BACKGROUND FORM, FEEDBACK*/
+/*MAIN SEC-BG*/
 .bg_main {
     background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
     background-attachment: fixed;
@@ -157,14 +160,17 @@ main, .bg_main {
     margin: 0;
 }
 
+/*LINK TO REGISTER*/
+
 .links {
-    display: flex;
-    justify-content: center;
+    text-align: center;
+}
+
+.links > span {
+    font-size: 1.2em;
 }
 
 .links > a {
-    text-decoration: none;
-    font-size: 1.2em;
     color: black;
     text-align: center;
 }
@@ -177,6 +183,14 @@ main, .bg_main {
 
 .form {
     width: 450px;
+}
+
+.feedback_form {
+    width: 100%;
+}
+
+.form,
+.feedback_form {
     border-radius: 5px;
     margin: 0 auto;
     box-shadow: 0 9px 50px hsla(20, 67%, 75%, 0.31);
@@ -201,8 +215,7 @@ textarea {
     transition: 0.2s linear;
 }
 
-.form > label > span:first-child,
-.add_form > label > span:first-child {
+.form > label > span:first-child {
     font-size: 16px;
     color: #5E6472;
     display: block;
@@ -210,10 +223,9 @@ textarea {
 }
 
 .form > label > span:last-child,
-.form > span,
-.add_form > label > span:last-child {
+.form > span {
     font-size: 14px;
-    color: cyan;
+    color: indianred;
     display: block;
 }
 
@@ -232,8 +244,12 @@ textarea {
     box-shadow: none;
 }
 
-
 /*TABLE*/
+.wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
 .table_block {
     padding: 30px 0;
     box-sizing: border-box;
@@ -249,6 +265,7 @@ table {
 table, th, td {
     border: 1px solid black;
     padding: 10px;
+    box-sizing: border-box;
     border-collapse: collapse;
     background-color: white;
 }
@@ -261,8 +278,6 @@ td, th {
 th {
     background-color: #FFE6FA;
 }
-
-/*REG LINK*/
 
 /*FOOTER*/
 footer {
@@ -278,46 +293,66 @@ footer {
 }
 
 @media only screen and (max-width: 400px) {
-    .navbar, .container, footer {
-        width: 400px;
+    .navbar {
+        display: flex;
+        justify-content: space-around;
     }
 
     .container {
         display: flex;
-        justify-content: space-around;
         align-items: center;
         height: auto;
         flex-direction: column;
         box-shadow: none;
     }
 
+    .form {
+        width: 320px;
+    }
+
+    .table_block {
+        width: 340px;
+        margin: 0 auto;
+    }
+
+    table {
+        width: 100%;
+    }
 
     .image, iframe {
         height: 150px;
     }
-
 
     .card:not(:last-child) {
         margin-bottom: 20px;
     }
 
     .card {
-        width: 45%;
-        height: 300px;
-        border: 1px solid grey;
-        box-shadow: 0px 0px 4px 0px #000000;
+        width: 60%;
+        height: 340px;
+        box-shadow: 0px 0px 2px 0px #000000;
     }
 
     .card_text {
         font-size: 12px;
         margin-top: 0;
     }
+}
+
+
+@media only screen and (max-width: 320px) {
+    .navbar a,
+    footer > span {
+        font-size: 15px;
+    }
 
     .form {
-        max-width: 400px;
+        width: 280px;
     }
 
-    table {
-        width: 400px;
+    .table_block {
+        width: 300px;
+        margin: 0 auto;
     }
+
 }

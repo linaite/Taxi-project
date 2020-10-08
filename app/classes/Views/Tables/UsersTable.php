@@ -12,13 +12,20 @@ class UsersTable extends Table
 
         $data = App::$db->getRowsWhere('data', []);
 
+        $feedbacks = App::$db->getData()['data'];
+
+        foreach ($feedbacks as &$feedback) {
+            $feedback['name'] = App::$db->getRowByID('users', $feedback['userid'])['name'];
+            unset($feedback['userid']);
+        }
+
         $table = [
             'headers' => [
-                'User Id',
                 'Date',
                 'Comment',
+                'Name',
             ],
-            'rows' => $data,
+            'rows' => $feedbacks
         ];
 
         parent::__construct($table);

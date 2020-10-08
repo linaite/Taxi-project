@@ -11,7 +11,7 @@ class RegisterForm extends Form
         $form = [
             'attr' => [
                 'method' => 'POST',
-                'class'=>'form'
+                'class'=>'form reg_form'
             ],
             'fields' => [
                 'name' => [

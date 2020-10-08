@@ -40,8 +40,9 @@ class FeedbackController extends Controller
     {
         if (!App::$session->getUser()) {
             $table = new UsersTable();
-            $msg = 'Want to leave a comment? Click here and register!';
+            $msg = 'Click here and register!';
             $link = Router::getUrl('register');
+
 
             $content = new Content(['link' => $link, 'msg' => $msg, 'table' => $table->render('table.tpl.php')]);
             $this->page->setTitle('Feedback');
@@ -59,8 +60,7 @@ class FeedbackController extends Controller
                     $user = App::$db->getRowsWhere('users', ['email' => App::$session->getUser()['email']]);
 
                     foreach ($user as $user_key => $user_value) {
-                        $user_id = "#000$user_key";
-//                        $user_name = $user_value['name'];
+                        $user_id = $user_key;
                     }
 
                     date_default_timezone_set("Europe/Vilnius");

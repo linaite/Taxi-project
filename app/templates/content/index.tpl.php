@@ -1,7 +1,7 @@
 <main>
     <section class="img_container">
         <div class="image">
-            <div class="overlay">
+            <div class="image_overlay">
                 <div class="text">Welcome!</div>
             </div>
         </div>
@@ -13,6 +13,8 @@
                 <h4 class="card_title">Wedding trasfers</h4>
                 <p class="card_text">For your transportations is included luxury cars or minibuses and professionals
                     well-dressed drivers.</p>
+                <p class="card_text">We Provide Private shuttles not sharing. No Hidden charges all rates will be
+                    confirmed before you book. Our Services includes..</p>
             </div>
         </div>
         <div class="card">
@@ -21,6 +23,8 @@
                 <h4 class="card_title">Corporate transfers</h4>
                 <p class="card_text">Minibus corporate hire with a driver is the best choice for handling a VIP client
                     or for arranging a company training or undertaking staff transfers.</p>
+                <p class="card_text">We Provide Private shuttles not sharing. No Hidden charges all rates will be
+                    confirmed before you book. Our Services includes..</p>
             </div>
         </div>
         <div class="card">
@@ -29,6 +33,8 @@
                 <h4 class="card_title">VIP tarnsfers</h4>
                 <p class="card_text">We transport your Vip customers or partners in the best way , with all the
                     facilities and amenities that even the most demanding customer can ask for.</p>
+                <p class="card_text">We Provide Private shuttles not sharing. No Hidden charges all rates will be
+                    confirmed before you book. Our Services includes..</p>
             </div>
         </div>
     </section>

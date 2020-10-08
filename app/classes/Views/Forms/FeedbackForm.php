@@ -12,7 +12,7 @@ class FeedbackForm extends Form
         $form = [
             'attr' => [
                 'method' => 'POST',
-                'class' => 'form'
+                'class' => 'form feedback_form'
             ],
             'fields' => [
                 'Comment' => [
