@@ -80,11 +80,6 @@ header {
     background-color: rgba(223, 181, 140, 0.8);
 }
 
-.img_block:hover .yellow {
-    background: none;
-    transition: background 1s;
-}
-
 .img_content {
     height: 100%;
     box-sizing: border-box;
@@ -95,6 +90,11 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.img_block:hover .yellow {
+    background: none;
+    transition: background 1s;
 }
 
 .img_content > h4 {
@@ -110,7 +110,6 @@ header {
     text-transform: uppercase;
     color: white;
     font-size: 14px;
-    /*display: block;*/
     margin-top: 20px;
 }
 
@@ -190,8 +189,6 @@ iframe {
 
 /*-------*------*-------*/
 
-
-/*SECTION FOR REGISTER, LOGIN, FEEDBACK MAIN TAG'S STYLE*/
 .bg_main {
     background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
     background-attachment: fixed;
@@ -200,6 +197,11 @@ iframe {
 
 main, .bg_main {
     min-height: 85vh;
+}
+
+.wrapper {
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 /*LINK TO REGISTER in FEEDBACK PAGE*/
@@ -220,7 +222,13 @@ main, .bg_main {
     color: indianred;
 }
 
-/*LOGIN, REGISTER, FEEDBACK FORMS*/
+/*
+***
+* SECTION FOR LOGIN, REGISTER, FEEDBACK FORMS STYLE
+***
+*This section includes all project forms style
+***
+*/
 .form_block {
     padding: 50px 0;
     box-sizing: border-box;
@@ -294,12 +302,13 @@ textarea {
     box-shadow: none;
 }
 
-/*TABLE*/
-.wrapper {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
+/*
+***
+* SECTION FOR TABLE STYLE
+***
+*This section includes table style
+***
+*/
 .table_block {
     padding: 30px 0;
     box-sizing: border-box;
@@ -400,6 +409,14 @@ footer {
         height: 150px;
     }
 
+    .img_content > h4 {
+        padding: 0 30px 15px 30px;
+    }
+
+    .img_content > span {
+        margin-top: 15px;
+    }
+
     .card:not(:last-child) {
         margin-bottom: 20px;
     }
@@ -414,6 +431,7 @@ footer {
         font-size: 12px;
         margin-top: 0;
     }
+
     footer > span {
         font-size: 1em;
     }
